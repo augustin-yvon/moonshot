@@ -39,12 +39,4 @@ class RegisterController extends AbstractController
             'form' => $form
         ]);
     }
-
-    #[Route('/index', name: 'index')]
-    public function index(): Response
-    {
-        return $this->render('register/index.html.twig', [
-            'message' => "Inscription réussie ! Vous pouvez vous connecter."
-        ]);
-    }
 }
