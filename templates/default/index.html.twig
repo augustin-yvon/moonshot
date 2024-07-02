@@ -3,14 +3,7 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-
-<div class="example-wrapper">
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
-
-    <h1>Bienvenu</h1>
-</div>
+    <div class="">
+        <h1>Bienvenu</h1>
+    </div>
 {% endblock %}

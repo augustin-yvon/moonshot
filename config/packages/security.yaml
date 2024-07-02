@@ -28,7 +28,7 @@ security:
 
             logout:
                 path: /logout
-                target: /login
+                target: /
 
             custom_authenticator: App\Security\UserAuthenticator
 
