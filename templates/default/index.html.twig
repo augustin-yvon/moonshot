@@ -4,6 +4,10 @@
 
 {% block body %}
     <div class="">
-        <h1>Bienvenu</h1>
+        {% if app.user %}
+            <h1>Bienvenu {{ app.user.firstname }}</h1>
+        {% else %}
+            <h1>Bienvenu</h1>
+        {% endif %}
     </div>
 {% endblock %}
