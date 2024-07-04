@@ -3,10 +3,21 @@
 {% block title %}Create new Post{% endblock %}
 
 {% block body %}
-    <h1>Create new Post</h1>
+    <form method="post" action="{{ path('post_new') }}" enctype="multipart/form-data">
+        <label for="text">Message:</label>
+        <textarea id="text" name="text"></textarea>
 
-    {% if errors %}
-        <div class="alert alert-danger">
+        <label for="image_name">Image Name:</label>
+        <input type="text" id="image_name" name="image_name">
+
+        <label for="image_path">Image File:</label>
+        <input type="file" id="image_path" name="image_path">
+
+        <button type="submit">Create Post</button>
+    </form>
+
+    {% if errors is defined %}
+        <div>
             <ul>
                 {% for error in errors %}
                     <li>{{ error.message }}</li>
@@ -14,18 +25,4 @@
             </ul>
         </div>
     {% endif %}
-
-    <form method="post">
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" name="title" required>
-        </div>
-        <div class="form-group">
-            <label for="content">Content</label>
-            <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Save</button>
-    </form>
-
-    <a href="{{ path('post_index') }}">Back to list</a>
 {% endblock %}

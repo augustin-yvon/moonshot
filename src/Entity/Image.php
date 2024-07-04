@@ -101,4 +101,9 @@ class Image
 
         return $this;
     }
+
+    public function getUrl(): ?string
+    {
+        return $this->path ? '/uploads/images/' . $this->path : null;
+    }
 }
