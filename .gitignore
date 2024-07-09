@@ -26,4 +26,4 @@
 ###< symfony/asset-mapper ###
 
 /mcd.PNG
-/migrations/
+/migrations
