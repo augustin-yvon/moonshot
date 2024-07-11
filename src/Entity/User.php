@@ -32,9 +32,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $password = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?int $bachelor_id = null;
-
     #[ORM\Column(type: Types::JSON)]
     private array $roles = [];
 
@@ -53,18 +50,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getBachelorId(): ?int
-    {
-        return $this->bachelor_id;
-    }
-
-    public function setBachelorId(int $bachelor_id): static
-    {
-        $this->bachelor_id = $bachelor_id;
-
-        return $this;
     }
 
     public function getFirstname(): ?string
