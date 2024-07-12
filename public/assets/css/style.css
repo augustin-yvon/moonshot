@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap');
+
 body {
-    background-color: #e2e2e2;
+    background-color: #939393;
     margin: 0;
     padding: 0;
+    font-family: "Lusitana", serif;
 }
 
 header {
@@ -9,7 +12,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    padding: 15px;
+    padding: 15px 30px 15px 30px;
     height: 80px;
 }
 
@@ -32,3 +35,12 @@ header nav ul li a {
     text-decoration: none;
 }
 
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    margin-top: auto;
+    font-size: 14px;
+}
