@@ -7,8 +7,6 @@
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         {% endblock %}
-
-
         {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
@@ -16,15 +14,25 @@
 
     <body>
         <header>
-            <div class="header-logo">
+
+        <div class="user-data">
+            {% if app.user %}
+            <h1>Bienvenu {{ app.user.firstname }}</h1>
+            <p>id. {{ app.user.id }}</p>
+            {% else %}
+            <h1>Bienvenu</h1>
+            {% endif %}
+        </div>
+
+            {# <div class="header-logo">
                 <a href="{{ path('home') }}">
                     <img src="{{ asset('assets/media/png/logo-laplateforme.png') }}" alt="Logo La Plateforme">
                 </a>
-            </div>
+            </div> #}
 
             <nav>
                 <ul>
-                    <li><a href="{{ path('home') }}">Home</a></li>
+                    <li><a href="{{ path('home') }}">{% include '/public/assets/media/svg/home.svg' %}Home</a></li>
                     {% if app.user %}
                         <li><a href="">Profil</a></li>
                         <li><a href="{{ path('app_logout') }}">Logout</a></li>
@@ -39,7 +47,7 @@
         {% block body %}{% endblock %}
 
         <footer>
-            <p>Copyright 2024 Moonshot by Alix, Salvatore, Augustin & Maëlle. All Rights Reserved</p>
+            <p>© 2024 Moonshot | Alix, Salvatore, Augustin & Maëlle.</p>
         </footer>
     </body>
 </html>
