@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -12,6 +13,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Range;
 
 class RegistrationFormType extends AbstractType
 {
@@ -51,6 +53,25 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+             
+            ->add('birthday', DateType::class, [
+                'widget' => 'single_text',
+                'label' => 'Date de naissance',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuillez entrer votre date de naissance',
+                    ]),
+                    new Range([
+                        'min' => '01-01-1900',
+                        'max' => 'today',
+                        'notInRangeMessage' => 'La date doit être postérieure à {{ limit }} et antérieure ou égale à {{ max }}.',
+                    ]),
+                ],
+                'attr' => [
+                    'placeholder' => 'JJ/MM/AAAA', 
+                ],
+            ])
+
             ->add('plainPassword', PasswordType::class, [
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password'],
