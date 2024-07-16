@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         {% endblock %}
@@ -23,19 +23,33 @@
             </div>
 
             <nav>
-                <ul>
-                    <li>
-                        <a href="{{ path('home') }}">
-                            <img src="{{ asset('assets/media/svg/home.svg') }}" alt="icon home">Home
-                        </a>
-                    </li>
+                <ul>                    
                     {% if app.user %}
-                        <li><a href=""><img src="{{ asset('assets/media/svg/profile.svg') }}" alt="icon profile">Profile</a></li>
-                        <li><a href=""><img src="{{ asset('assets/media/svg/mail.svg') }}" alt="mail profile">Mail</a></li>
-                        <li><a href="{{ path('app_logout') }}"><img src="{{ asset('assets/media/svg/logout.svg') }}" alt="icon logout">Logout</a></li>
+                        <a href="{{ path('home') }}" class="{{ app.request.attributes.get('_route') == 'home' ? 'active' : '' }}">
+                            <span class="material-icons">home</span>
+                            Home
+                        </a>
+                        <a href="{{ path('app_profile')}}" class="{{ app.request.attributes.get('_route') == 'app_profile' ? 'active' : '' }}">
+                            <span class="material-icons">person</span>
+                            Profil
+                        </a>
+                        <a href="{{ path('app_mail')}}" class="{{ app.request.attributes.get('_route') == 'app_mail' ? 'active' : '' }}">
+                            <span class="material-icons">mail_outline</span>
+                            Mail
+                        </a>
+                        <a href="{{ path('app_logout') }}" class="{{ app.request.attributes.get('_route') == 'app_logout' ? 'active' : '' }}">
+                            <span class="material-icons">logout</span>
+                            Logout
+                        </a>
                     {% else %}
-                        <li><a href="{{ path('app_register') }}"><img src="{{ asset('assets/media/svg/register.svg') }}" alt="icon register">Register</a></li>
-                        <li><a href="{{ path('app_login') }}"><img src="{{ asset('assets/media/svg/login.svg') }}" alt="icon login">Login</a></li>
+                         <a href="{{ path('app_login') }}" class="{{ app.request.attributes.get('_route') == 'app_login' ? 'active' : '' }}">
+                            <span class="material-icons">login</span>
+                            Login
+                        </a>
+                        <a href="{{ path('app_register') }}" class="{{ app.request.attributes.get('_route') == 'app_register' ? 'active' : '' }}">
+                            <span class="material-icons">person_add</span>
+                            Register
+                        </a>
                     {% endif %}
                 </ul>
             </nav>

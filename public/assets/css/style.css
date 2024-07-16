@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap');
+@import "~material-icons/iconfont/material-icons.css";
 
 :root {
     --blue: #0062FF;
@@ -19,7 +20,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    padding: 5px 30px 5px 30px;
+    padding: 5px 30px;
     height: 80px;
     border-radius: 0 0 20px 20px;
 }
@@ -39,10 +40,6 @@ header nav {
     height: 100%;
 }
 
-header nav img {
-    margin-right: 8px;
-}
-
 header nav ul {
     display: flex;
     height: 80px;
@@ -52,22 +49,32 @@ header nav ul {
     list-style: none;
     gap: 15px;
     margin: 0;
+    
 }
 
-header nav ul li a {
+header nav ul a {
     color: var(--dark-black);
     text-decoration: none;
     border: solid 1px #959595;
-    padding: 10px 12px 5px 12px;
+    padding: 8px;
     border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
-header nav ul li a:hover {
+header nav ul a span {
+    margin-right: 5px;
+}
+
+header nav ul a:hover {
     border: solid 1px var(--dark-black);
 }
 
-header nav ul li a:active {
-    border: solid 1px var(--dark-black);
+.active {
+    background-color: var(--blue);
+    color: white;
+    border: solid 1px var(--blue);
 }
 
 .wrapper {
