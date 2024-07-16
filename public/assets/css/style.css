@@ -39,6 +39,10 @@ header nav {
     height: 100%;
 }
 
+header nav img {
+    margin-right: 8px;
+}
+
 header nav ul {
     display: flex;
     height: 80px;
@@ -53,6 +57,26 @@ header nav ul {
 header nav ul li a {
     color: var(--dark-black);
     text-decoration: none;
+    border: solid 1px #959595;
+    padding: 10px 12px 5px 12px;
+    border-radius: 8px;
+}
+
+#mail-btn a {
+    color: white;
+}
+
+#mail-btn {
+    background-color: var(--blue);
+    padding: 10px 12px 5px 12px;
+}
+
+header nav ul li a:hover {
+    border: solid 1px var(--dark-black);
+}
+
+header nav ul li a:active {
+    border: solid 1px var(--dark-black);
 }
 
 .wrapper {
