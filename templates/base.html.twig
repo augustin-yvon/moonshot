@@ -7,8 +7,6 @@
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         {% endblock %}
-
-
         {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
@@ -16,27 +14,46 @@
 
     <body>
         <header>
-            <div class="header-logo">
+
+        <div class="user-data">
+            {% if app.user %}
+            <h1>Bienvenu {{ app.user.firstname }}</h1>
+            <p>id. {{ app.user.id }}</p>
+            {% else %}
+            <h1>Bienvenu</h1>
+            {% endif %}
+        </div>
+
+            {# <div class="header-logo">
                 <a href="{{ path('home') }}">
                     <img src="{{ asset('assets/media/png/logo-laplateforme.png') }}" alt="Logo La Plateforme">
                 </a>
-            </div>
+            </div> #}
 
             <nav>
                 <ul>
-                    <li><a href="{{ path('home') }}">Home</a></li>
+                    <li>
+                        <a href="{{ path('home') }}">
+                            <img src="{{ asset('assets/media/svg/home.svg') }}" alt="icon home">Home
+                        </a>
+                    </li>
                     {% if app.user %}
-                        <li><a href="">Profil</a></li>
-                        <li><a href="{{ path('app_logout') }}">Logout</a></li>
+                        <li><a href=""><img src="{{ asset('assets/media/svg/profile.svg') }}" alt="icon profile">Profile</a></li>
+                        <li id="mail-btn"><a href=""><img src="{{ asset('assets/media/svg/mail.svg') }}" alt="mail profile">Mail</a></li>
+                        <li><a href="{{ path('app_logout') }}"><img src="{{ asset('assets/media/svg/logout.svg') }}" alt="icon logout">Logout</a></li>
                     {% else %}
-                        <li><a href="{{ path('app_register') }}">Register</a></li>
-                        <li><a href="{{ path('app_login') }}">Login</a></li>
+                        <li><a href="{{ path('app_register') }}"><img src="{{ asset('assets/media/svg/register.svg') }}" alt="icon register">Register</a></li>
+                        <li><a href="{{ path('app_login') }}"><img src="{{ asset('assets/media/svg/login.svg') }}" alt="icon login">Login</a></li>
                     {% endif %}
                 </ul>
             </nav>
         </header>
 
         {% block body %}{% endblock %}
+
+        <footer>
+            <p>© 2024 Moonshot | Alix, Salvatore, Augustin & Maëlle.</p>
+        </footer>
     </body>
 
     <footer>
