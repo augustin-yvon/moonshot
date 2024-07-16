@@ -13,8 +13,7 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-
-    <body>
+    
         <header>
             <div class="header-logo">
                 <a href="{{ path('home') }}">
@@ -24,9 +23,13 @@
 
             <nav>
                 <ul>
-                    <li><a href="{{ path('home') }}">Home</a></li>
                     {% if app.user %}
-                        <li><a href="">Profil</a></li>
+                        <li class="user-info">
+                            <div class="avatar">
+                                {{ app.user.firstName[:1] | upper }}
+                            </div>
+                            <span>{{ app.user.firstName }} {{ app.user.lastName }}</span>
+                        </li>
                         <li><a href="{{ path('app_logout') }}">Logout</a></li>
                     {% else %}
                         <li><a href="{{ path('app_register') }}">Register</a></li>
@@ -38,8 +41,9 @@
 
         {% block body %}{% endblock %}
 
-        <footer>
-            <p>Copyright 2024 Moonshot by Alix, Salvatore, Augustin & Maëlle. All Rights Reserved</p>
-        </footer>
-    </body>
+        {% block footer %}
+            <footer>
+                <p>© 2024 Moonshot by Alix, Salvatore, Augustin & Maëlle. All Rights Reserved</p>
+            </footer>
+        {% endblock %}
 </html>

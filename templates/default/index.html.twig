@@ -6,9 +6,7 @@
 {% block body %}
     <div class="">
         {% if app.user %}
-            <h1>Bienvenu {{ app.user.firstname }}</h1>
-        {% else %}
-            <h1>Bienvenu</h1>
+            <h1>Bienvenue</h1>
         {% endif %}
 
         <div>{{ dump(app.user) }}</div>
