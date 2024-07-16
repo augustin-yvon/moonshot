@@ -39,7 +39,7 @@
                     </li>
                     {% if app.user %}
                         <li><a href=""><img src="{{ asset('assets/media/svg/profile.svg') }}" alt="icon profile">Profile</a></li>
-                        <li id="mail-btn"><a href=""><img src="{{ asset('assets/media/svg/mail.svg') }}" alt="mail profile">Mail</a></li>
+                        <li><a href=""><img src="{{ asset('assets/media/svg/mail.svg') }}" alt="mail profile">Mail</a></li>
                         <li><a href="{{ path('app_logout') }}"><img src="{{ asset('assets/media/svg/logout.svg') }}" alt="icon logout">Logout</a></li>
                     {% else %}
                         <li><a href="{{ path('app_register') }}"><img src="{{ asset('assets/media/svg/register.svg') }}" alt="icon register">Register</a></li>
