@@ -15,8 +15,10 @@
         <header>
             <div class="user-data">
                 {% if app.user %}
-                    <h1>Bonjour {{ app.user.firstname }} {{app.user.lastname}}</h1>
-
+                    <div class="user-data_title">Bonjour {{ app.user.firstname }} {{app.user.lastname}}</div>
+                        {% for class in app.user.classId %}
+                            <div class="user-data_subtitle">{{ class.name }}</div>
+                        {% endfor %}
                 {% else %}
                     <h1>Bienvenue </h1>
                 {% endif %}

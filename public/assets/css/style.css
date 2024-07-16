@@ -10,7 +10,7 @@ body {
     background-color: #D9D9D9;
     margin: 0;
     padding: 0;
-    font-family: "Lusitana", serif;
+    font-family: "Helvetica", serif;
     position: relative;
     height: 100vh;
 }
@@ -20,16 +20,27 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    padding: 5px 30px;
+    padding: 10px 30px;
     height: 80px;
     border-radius: 0 0 20px 20px;
 }
 
 .user-data {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
     color: var(--dark-black);
+}
+
+.user-data_title {
+    font-size: 40px;
+    font-weight: bold;
+    padding: 8px 0;
+}
+
+.user-data_subtitle {
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 0 15px 0;
 }
 
 .user-data p {
