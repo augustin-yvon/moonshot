@@ -11,24 +11,16 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-
-    <body>
+    
         <header>
+            <div class="user-data">
+                {% if app.user %}
+                    <h1>Bonjour {{ app.user.firstname }} {{app.user.lastname}}</h1>
 
-        <div class="user-data">
-            {% if app.user %}
-            <h1>Bienvenu {{ app.user.firstname }}</h1>
-            <p>id. {{ app.user.id }}</p>
-            {% else %}
-            <h1>Bienvenu</h1>
-            {% endif %}
-        </div>
-
-            {# <div class="header-logo">
-                <a href="{{ path('home') }}">
-                    <img src="{{ asset('assets/media/png/logo-laplateforme.png') }}" alt="Logo La Plateforme">
-                </a>
-            </div> #}
+                {% else %}
+                    <h1>Bienvenue </h1>
+                {% endif %}
+            </div>
 
             <nav>
                 <ul>
@@ -49,10 +41,13 @@
             </nav>
         </header>
 
-        {% block body %}{% endblock %}
+        {% block body %}
+        {% endblock %}
+        </body>
 
-        <footer>
-            <p>© 2024 Moonshot | Alix, Salvatore, Augustin & Maëlle.</p>
-        </footer>
-    </body>
+        {% block footer %}
+            <footer>
+                <p>© 2024 Moonshot | Alix, Salvatore, Augustin & Maëlle.</p>
+            </footer>
+        {% endblock %}
 </html>
