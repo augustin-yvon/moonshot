@@ -21,11 +21,13 @@
                             {% if role == "ROLE_STUDENT" %}
                             <img src="{{ asset('assets/media/svg/student-role.svg') }}" alt="student role icon">
                             {% elseif role == "ROLE_TEACHER" %}
-                            <img src="{{ asset('assets/media/svg/student-role.svg') }}" alt="student role icon">
+                            <img src="{{ asset('assets/media/svg/teacher-role.svg') }}" alt="teacher role icon">
+                            {% elseif role == "ROLE_ADMIN" %}
+                            <img src="{{ asset('assets/media/svg/admin-role.svg') }}" alt="admin role icon">
                             {% endif %}
                         {% endfor %}
                         </div>
-                        <h1>Bonjour {{ app.user.firstname }} {{app.user.lastname}}</h1>
+                        <h1>Hello {{ app.user.firstname }} {{app.user.lastname}}</h1>
                     </div>
                     <div class="class-data">
                         {% for class in app.user.classId %}
