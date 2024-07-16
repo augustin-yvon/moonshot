@@ -4,11 +4,10 @@
 
 
 {% block body %}
-    <div class="">
+    <div class="wrapper">
         {% if app.user %}
             <h1>Bienvenue</h1>
         {% endif %}
 
-        <div>{{ dump(app.user) }}</div>
     </div>
 {% endblock %}
