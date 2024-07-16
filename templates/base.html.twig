@@ -15,8 +15,23 @@
         <header>
             <div class="user-data">
                 {% if app.user %}
-                    <h1>Bonjour {{ app.user.firstname }} {{app.user.lastname}}</h1>
-
+                    <div class="user-info">
+                        <div class="role-icon">
+                        {% for role in app.user.roles %}
+                            {% if role == "ROLE_STUDENT" %}
+                            <img src="{{ asset('assets/media/svg/student-role.svg') }}" alt="student role icon">
+                            {% elseif role == "ROLE_TEACHER" %}
+                            <img src="{{ asset('assets/media/svg/student-role.svg') }}" alt="student role icon">
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                        <h1>Bonjour {{ app.user.firstname }} {{app.user.lastname}}</h1>
+                    </div>
+                    <div class="class-data">
+                        {% for class in app.user.classId %}
+                            <p>{{ class.name }}</p>
+                        {% endfor %}
+                    </div>
                 {% else %}
                     <h1>Bienvenue </h1>
                 {% endif %}

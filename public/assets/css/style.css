@@ -19,20 +19,30 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    padding: 5px 30px 5px 30px;
+    padding: 20px 30px 20px 30px;
     height: 80px;
     border-radius: 0 0 20px 20px;
 }
 
 .user-data {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
     color: var(--dark-black);
 }
 
-.user-data p {
-    margin-left: 20px;
+.class-data p {
+    font-weight: 900;
+    margin: 0;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.user-info h1 {
+    margin: 0;
+    margin-left: 10px;
 }
 
 header nav {
@@ -107,4 +117,17 @@ footer {
     bottom: 0;
     border: solid transparent;
     border-radius: 20px 20px 0 0;
+}
+
+.grades-section {
+    background-color: white;
+    border: transparent solid 1px;
+    border-radius: 20px;
+    width: 40%;
+    margin-top: 50px;
+    padding-left: 20px;
+}
+
+.grades-section:hover {
+    box-shadow: 5px 5px 4px 1px #868686;
 }

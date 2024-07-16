@@ -160,10 +160,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->email;
     }
 
-
-
-
-
     public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->created_at;

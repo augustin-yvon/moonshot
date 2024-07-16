@@ -6,9 +6,26 @@
 {% block body %}
     <div class="wrapper">
         {% if app.user %}
-            <h1>Bienvenue {{ app.user.firstname }}</h1>
+            <div class="grades-section">
+                <h2>Your grades</h2>
+                {% if grades is not empty %}
+                    <ul>
+                        {% for grade in grades %}
+
+                            <li>
+                                <strong>Course:</strong> {{ grade.course.name }}<br>
+                                <strong>Grade:</strong> {{ grade.grade }} /20<br>
+                                <strong>Appreciation:</strong> {{ grade.appreciation }}
+                            </li>
+
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>You have no grades yet.</p>
+                {% endif %}
+            </div>
         {% else %}
-            <h1>Bienvenue chef</h1>
+            <h1>Welcome</h1>
         {% endif %}
 
     </div>

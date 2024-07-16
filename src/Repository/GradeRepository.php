@@ -16,6 +16,18 @@ class GradeRepository extends ServiceEntityRepository
         parent::__construct($registry, Grade::class);
     }
 
+    public function findByUserWithCourses($user)
+    {
+        return $this->createQueryBuilder('g')
+            ->leftJoin('g.course', 'c')
+            ->addSelect('c')
+            ->where('g.user_id = :user')
+            ->setParameter('user', $user)
+            ->getQuery()
+            ->getResult();
+    }
+
+
     //    /**
     //     * @return Grade[] Returns an array of Grade objects
     //     */
