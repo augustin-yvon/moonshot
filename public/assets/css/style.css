@@ -32,7 +32,7 @@ header {
 .user-data {
     display: flex;
     flex-direction: row;
-    color: var(--blue);
+    color: var(--dark-black);
 }
 
 .user-data_info {
