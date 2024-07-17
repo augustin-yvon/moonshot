@@ -7,80 +7,92 @@
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     {% endblock %}
-    {% block javascripts %}
-        {% block importmap %}{{ importmap('app') }}{% endblock %}
-    {% endblock %}
 </head>
 <body>
-
-<header>
-    <div class="user-data">
-        {% if app.user %}
-            <div class="user-data_icon">
-                {% for role in app.user.roles %}
-                    {% if role == 'ROLE_ADMIN' %}
-                        <span class="material-icons">settings</span>
-                    {% elseif role == 'ROLE_STUDENT' %}
-                        <span class="material-icons">school</span>
-                    {% elseif role == 'ROLE_TEACHER' %}
-                        <span class="material-icons">auto_stories</span>
-                    {% endif %}
-                {% endfor %}
+    <div class="background">
+        <div class="text-group">
+            <div class="text-line">
+                <div class="filled">projet</div>
+                <div class="light">formation</div>
             </div>
-            <div class="user-data_info">
-                <div class="user-data_title">Bonjour {{ app.user.firstname }} {{ app.user.lastname }}</div>
-                <div class="user-data_subtitle">
-                    {% for class in app.user.getClassId() %}
-                        {{ class.name }}
-                    {% endfor %}
-                </div>
+            <div class="text-line">
+                <div class="light">moonshot</div>
+                <div class="empty">groupe</div>
             </div>
-        {% else %}
-            <h1>Bienvenue </h1>
-        {% endif %}
+            <div class="text-line">
+                <div class="empty">projet</div>
+                <div class="filled">moonshot</div>
+            </div>
+        </div>
     </div>
 
-    <nav>
-        <ul>
+    <header>
+        <div class="user-data">
             {% if app.user %}
-                <a href="{{ path('home') }}" class="{{ app.request.attributes.get('_route') == 'home' ? 'active' : '' }}">
-                    <span class="material-icons">home</span>
-                    Home
-                </a>
-                <a href="{{ path('app_profile')}}" class="{{ app.request.attributes.get('_route') == 'app_profile' ? 'active' : '' }}">
-                    <span class="material-icons">person</span>
-                    Profil
-                </a>
-                <a href="{{ path('app_mail')}}" class="{{ app.request.attributes.get('_route') == 'app_mail' ? 'active' : '' }}">
-                    <span class="material-icons">mail_outline</span>
-                    Mail
-                </a>
-                <a href="{{ path('app_logout') }}" class="{{ app.request.attributes.get('_route') == 'app_logout' ? 'active' : '' }}">
-                    <span class="material-icons">logout</span>
-                    Logout
-                </a>
+                <div class="user-data_icon">
+                    {% for role in app.user.roles %}
+                        {% if role == 'ROLE_ADMIN' %}
+                            <span class="material-icons">settings</span>
+                        {% elseif role == 'ROLE_STUDENT' %}
+                            <span class="material-icons">school</span>
+                        {% elseif role == 'ROLE_TEACHER' %}
+                            <span class="material-icons">auto_stories</span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="user-data_info">
+                    <div class="user-data_title">Bonjour {{ app.user.firstname }} {{ app.user.lastname }}</div>
+                    <div class="user-data_subtitle">
+                        {% for class in app.user.getClassId() %}
+                            {{ class.name }}
+                        {% endfor %}
+                    </div>
+                </div>
             {% else %}
-                <a href="{{ path('app_login') }}" class="{{ app.request.attributes.get('_route') == 'app_login' ? 'active' : '' }}">
-                    <span class="material-icons">login</span>
-                    Login
-                </a>
-                <a href="{{ path('app_register') }}" class="{{ app.request.attributes.get('_route') == 'app_register' ? 'active' : '' }}">
-                    <span class="material-icons">person_add</span>
-                    Register
-                </a>
+                <h1>Bienvenue</h1>
             {% endif %}
-        </ul>
-    </nav>
-</header>
+        </div>
 
-{% block body %}
-{% endblock %}
+        <nav>
+            <ul>
+                {% if app.user %}
+                    <a href="{{ path('home') }}" class="{{ app.request.attributes.get('_route') == 'home' ? 'active' : '' }}">
+                        <span class="material-icons">home</span>
+                        Home
+                    </a>
+                    <a href="{{ path('app_profile')}}" class="{{ app.request.attributes.get('_route') == 'app_profile' ? 'active' : '' }}">
+                        <span class="material-icons">person</span>
+                        Profil
+                    </a>
+                    <a href="{{ path('app_mail')}}" class="{{ app.request.attributes.get('_route') == 'app_mail' ? 'active' : '' }}">
+                        <span class="material-icons">mail_outline</span>
+                        Mail
+                    </a>
+                    <a href="{{ path('app_logout') }}" class="{{ app.request.attributes.get('_route') == 'app_logout' ? 'active' : '' }}">
+                        <span class="material-icons">logout</span>
+                        Logout
+                    </a>
+                {% else %}
+                    <a href="{{ path('app_login') }}" class="{{ app.request.attributes.get('_route') == 'app_login' ? 'active' : '' }}">
+                        <span class="material-icons">login</span>
+                        Login
+                    </a>
+                    <a href="{{ path('app_register') }}" class="{{ app.request.attributes.get('_route') == 'app_register' ? 'active' : '' }}">
+                        <span class="material-icons">person_add</span>
+                        Register
+                    </a>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
 
-{% block footer %}
-<footer>
-    <p>© 2024 Moonshot | Alix, Salvatore, Augustin & Maëlle.</p>
-</footer>
-{% endblock %}
+    {% block body %}
+    {% endblock %}
 
+    {% block footer %}
+    <footer>
+        <p>© 2024 Moonshot | Alix, Salvatore, Augustin & Maëlle.</p>
+    </footer>
+    {% endblock %}
 </body>
 </html>
