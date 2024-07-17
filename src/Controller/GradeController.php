@@ -15,7 +15,7 @@ class GradeController extends AbstractController
     {
         $user = $this->getUser();
         
-        $grades = $gradeRepository->findByUserWithCourses($user);
+        $grades = $gradeRepository->findGradesByUser($user);
 
         return $this->render('default/index.html.twig', [
             'grades' => $grades,

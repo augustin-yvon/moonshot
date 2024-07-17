@@ -16,7 +16,7 @@ class GradeRepository extends ServiceEntityRepository
         parent::__construct($registry, Grade::class);
     }
 
-    public function findByUserWithCourses($user)
+    public function findGradesByUser($user)
     {
         return $this->createQueryBuilder('g')
             ->leftJoin('g.course', 'c')
