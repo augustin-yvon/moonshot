@@ -2,13 +2,19 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}Bienvenue!{% endblock %}</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     {% endblock %}
 </head>
 <body>
+    {% block javascript %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    {% endblock %}
+
+
     <div class="background">
         <div class="text-group">
             <div class="text-line">
@@ -42,11 +48,6 @@
                 </div>
                 <div class="user-data_info">
                     <div class="user-data_title">Bonjour {{ app.user.firstname }} {{ app.user.lastname }}</div>
-                    <div class="user-data_subtitle">
-                        {% for class in app.user.getClassId() %}
-                            {{ class.name }}
-                        {% endfor %}
-                    </div>
                 </div>
             {% else %}
                 <h1>Bienvenue</h1>
