@@ -21,7 +21,7 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('firstname', TextType::class, [
-                    'label' => 'Prénom',
+                    'label' => false,
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez entrer votre prénom',
@@ -29,10 +29,13 @@ class RegistrationFormType extends AbstractType
                     new Length([
                         'max' => 255,
                     ]),
-                ]
+                ],
+                'attr' => [
+                    'placeholder' => 'prénom', 
+                ],
             ])
             ->add('lastname', TextType::class, [
-                    'label' => 'Nom',
+                    'label' => false,
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez entrer votre nom',
@@ -41,9 +44,12 @@ class RegistrationFormType extends AbstractType
                         'max' => 255,
                     ]),
                 ],
+                'attr' => [
+                    'placeholder' => 'nom', 
+                ],
             ])
             ->add('email', EmailType::class, [
-                    'label' => 'Email',
+                    'label' => false,
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez entrer votre adresse email',
@@ -52,11 +58,14 @@ class RegistrationFormType extends AbstractType
                         'max' => 255,
                     ]),
                 ],
+                'attr' => [
+                    'placeholder' => 'e-mail', 
+                ],
             ])
              
             ->add('birthday', DateType::class, [
                 'widget' => 'single_text',
-                'label' => 'Date de naissance',
+                'label' => false,
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez entrer votre date de naissance',
@@ -74,7 +83,11 @@ class RegistrationFormType extends AbstractType
 
             ->add('plainPassword', PasswordType::class, [
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password'],
+                'label' => false,
+                'attr' => [
+                    'autocomplete' => 'new-password',
+                    'placeholder' => 'password',
+                ],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Please enter a password',

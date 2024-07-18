@@ -95,6 +95,47 @@ header nav ul li a:active {
     margin: 0 40px 0 40px;
 }
 
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lusitana", serif;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+.form-input input {
+    margin-top: 10px;
+    font-family: "Lusitana", serif;
+    font-size: 15px;
+    padding: 7px;
+}
+
+.form-input button {
+    font-family: "Lusitana", serif;
+    font-size: 15px;
+    margin-top: 20px;
+    color: var(--dark-black);
+    text-decoration: none;
+    border: solid 1px #959595;
+    padding: 10px 12px 10px 12px;
+    border-radius: 8px;
+    width: 250px;
+}
+
+.form-input button:hover {
+    border: solid 1px var(--dark-black);
+}
+
+.form-row {
+    width: 230px;
+}
+
 footer {
     font-family: "Lusitana", serif;
     display: flex;
