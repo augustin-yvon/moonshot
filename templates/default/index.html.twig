@@ -8,6 +8,7 @@
 
         {% if app.user %}
 
+        <div class="dashboard">
             <div class="grades-section">
                 <h2>Your grades</h2>
                 {% if grades is not empty %}
@@ -28,7 +29,7 @@
                     {% for document in documents %}
                         <div class="course-data">
                             <div>{{ document.name}}</div>
-                            <div><a href="{{ document.file_path }}" target="_blank">download</a></div>
+                            <div><a href="{{ document.getFilePath }}" target="_blank">download</a></div>
                         </div>
                     {% endfor %}
                 
@@ -36,6 +37,9 @@
                     <p>You have no courses yet.</p>
                 {% endif %}
             </div>
+        </div>
+
+            
 
         {% else %}
             <h1>Welcome</h1>

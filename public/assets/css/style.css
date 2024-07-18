@@ -17,7 +17,13 @@ body {
 
 h2 {
     font-weight: 600;
+    color: var(--blue);
 }
+
+
+/*********************************************/
+/******************** HEADER *****************/
+/*********************************************/
 
 header {
     font-family: "Lusitana", serif;
@@ -95,6 +101,11 @@ header nav ul li a:active {
     margin: 0 40px 0 40px;
 }
 
+
+/*********************************************/
+/************* FROM LOGIN/REGISTER ***********/
+/*********************************************/
+
 .form-container {
     display: flex;
     flex-direction: column;
@@ -136,34 +147,31 @@ header nav ul li a:active {
     width: 230px;
 }
 
-footer {
-    font-family: "Lusitana", serif;
+/*********************************************/
+/***************** DASHBOARD *****************/
+/*********************************************/
+
+.dashboard {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--blue);
-    color: white;
-    padding: 10px;
-    margin-top: auto;
-    font-size: 14px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    border: solid transparent;
-    border-radius: 20px 20px 0 0;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.grades-section {
+/*********************************************/
+/*************** GRADES SECTION **************/
+/*********************************************/
+
+.grades-section, .courses-section {
     background-color: white;
     border: transparent solid 1px;
     border-radius: 20px;
-    width: 40%;
+    width: 45%;
     margin-top: 50px;
     padding: 10px 25px 30px 25px;
     box-shadow: 5px 5px 4px 1px #868686;
 }
 
-.grade-data {
+.grade-data, .course-data {
     margin-bottom: 20px;
     display: flex;
     flex-direction: row;
@@ -172,7 +180,7 @@ footer {
     padding: 10px 15px 10px 15px;
 }
 
-.grade-data:hover {
+.grade-data:hover, .course-data:hover {
     border: 0.5px solid #686868;
     padding: 10px 15px 10px 15px;
     border-radius: 10px;
@@ -180,4 +188,33 @@ footer {
 
 #course-name {
     font-weight: 400;
+}
+
+
+/*********************************************/
+/************** COURSES SECTION **************/
+/*********************************************/
+
+.course-data a {
+    color: var(--dark-black);
+    font-size: 13px;
+}
+
+/*********************************************/
+/******************* FOOTER ******************/
+/*********************************************/
+
+footer {
+    font-family: "Lusitana", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue);
+    color: white;
+    padding: 5px;
+    margin-top: auto;
+    font-size: 14px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
