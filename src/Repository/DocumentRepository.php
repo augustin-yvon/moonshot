@@ -39,13 +39,15 @@ class DocumentRepository extends ServiceEntityRepository
     //         ->getResult();
     // }
 
-    public function findDocumentsByUser($user)
+    public function findDocumentsByUser($user,$classes)
     {
         return $this->createQueryBuilder('d')
             ->leftJoin('d.class_id', 'c')
             ->addSelect('c')
             ->where('d.user_id = :user')
+            ->orWhere('c.id in (:classes)')
             ->setParameter('user', $user)
+            ->setParameter('classes', $classes)
             ->getQuery()
             ->getResult();
     }
