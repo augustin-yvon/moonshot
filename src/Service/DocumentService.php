@@ -2,7 +2,6 @@
 
 namespace App\Service;
 
-use App\Repository\ClassNameRepository;
 use App\Repository\DocumentRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

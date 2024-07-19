@@ -16,29 +16,6 @@ class DocumentRepository extends ServiceEntityRepository
         parent::__construct($registry, Document::class);
     }
 
-    /**
-     * @param int $user
-     * @return array
-     */
-
-    // public function findDocumentsByUser($user)
-    // {
-    //     $classId = $this->createQueryBuilder('user_class_name')
-    //     ->where('user_class_name.id = :userId')
-    //     ->setParameter('userId', $user)
-    //     ->getQuery()
-    //         ->getFirstResult();
-
-    //     return $this->createQueryBuilder('d')
-    //         ->leftJoin('d.user', 'u')
-    //         ->leftJoin('d.class', 'c')
-    //         ->where('u.id = :userId OR c.id = :classId')
-    //         ->setParameter('userId', $user)
-    //         ->setParameter('classId', $classId)
-    //         ->getQuery()
-    //         ->getResult();
-    // }
-
     public function findDocumentsByUser($user,$classes)
     {
         return $this->createQueryBuilder('d')
@@ -51,5 +28,4 @@ class DocumentRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
-
 }

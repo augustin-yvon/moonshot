@@ -15,17 +15,7 @@ class DocumentController extends AbstractController
     #[IsGranted('IS_AUTHENTICATED_FULLY')]
     public function index(DocumentRepository $documentRepository): Response
     {
-        $user = $this->getUser();
-
-        if ($user) {
-            $documents = $documentRepository->findDocumentsByUser($user);
-
-            dd($documents);
-
-            return $this->render('default/index.html.twig', [
-                'documents' => $documents,
-            ]);
-        }
+        
 
         return $this->redirectToRoute('login');
     }
