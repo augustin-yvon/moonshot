@@ -11,7 +11,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController
 {
     #[Route(path: '/login', name: 'app_login')]
-    public function login(AuthenticationUtils $authenticationUtils, SessionInterface $session): Response
+    public function login(AuthenticationUtils $authenticationUtils): Response
     {
         if ($this->getUser()) {
             return $this->redirectToRoute('home');
@@ -19,11 +19,8 @@ class SecurityController extends AbstractController
 
         $error = $authenticationUtils->getLastAuthenticationError();
 
-        $session->set('open_login_modal', true);
-
         return $this->render('security/login.html.twig', [
             'error' => $error,
-            'open_login_modal' => 'true',
         ]);
     }
 

@@ -121,6 +121,10 @@ footer {
     border-radius: 20px 20px 0 0;
 }
 
+.text_footer {
+    margin: 5px
+}
+
 /* Background CSS */
   
 .background {
@@ -170,18 +174,20 @@ footer {
   
 /* Container CSS */
 
-/* .form-container {
-    display: flex;
-    flex-direction: column;
+.form-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    width: 100%;
+    background-color: #fff; 
+    border-radius: .375rem; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    padding: 1.5rem; 
+    z-index: 1050;
+}
+
+.modal-header, .modal-title {
     justify-content: center;
-    align-items: center;
-    background-color: var(--white);
-    height: 50%;
-    width: 80%; 
-    max-width: 500px; 
-    margin: auto; 
-    margin-top: 50px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: var(--shadow); 
-} */
+}
