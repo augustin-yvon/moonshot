@@ -13,10 +13,15 @@
                 <h2>Your grades</h2>
                 {% if grades is not empty %}
                     {% for grade in grades %}
-                        <div class="grade-data">
-                            <div id="course-name">{{ grade.course.name }}</div>
-                            <div>{{ grade.grade }} /100</div>
-                        </div>
+                        <button type="button" style="all:unset; width:100%;" data-toggle="modal" data-target="#exampleModal"
+                                    data-grade="{{ grade.grade }}" data-course-name="{{ grade.course.name }}"
+                                    data-appreciation="{{grade.appreciation}}">
+                            <div class="grade-data">
+                                <div id="course-name">{{ grade.course.name }}</div>
+                                <div>{{ grade.grade }} /100</div>
+                                
+                            </div>
+                        </button>
                     {% endfor %}
                 {% else %}
                     <p>You have no grades yet.</p>
@@ -44,6 +49,37 @@
         {% else %}
             <h1>Welcome</h1>
         {% endif %}
-
+        
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modal-grade"></p>
+                        <p id="modal-appreciation"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var grade = button.data('grade');
+            var courseName = button.data('course-name'); // Extract info from data-* attributes
+            var appreciation = button.data('appreciation');
+
+            // Update the modal's content.
+            var modal = $(this);
+            modal.find('.modal-title').text('Details for ' + courseName);
+            modal.find('#modal-course-name').text('Course: ' + courseName);
+            modal.find('#modal-grade').text('Grade: ' + grade);
+            modal.find('#modal-appreciation').text('Appreciation: ' + appreciation);
+        });
+    </script>
 {% endblock %}
