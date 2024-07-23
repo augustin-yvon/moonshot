@@ -28,6 +28,10 @@
                 {% endif %}
             </div>
 
+            <div class="calendar-section" id="calendar-root">
+                <h2>Calendar</h2>
+            </div>
+
             <div class="courses-section">
                 <h2>Your courses</h2>
                 {% if documents is not empty %}
@@ -54,7 +58,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h2 class="modal-title" id="exampleModalLabel">Modal title</h2>
                     </div>
                     <div class="modal-body">
                         <p id="modal-grade"></p>
@@ -63,6 +67,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -76,7 +81,7 @@
 
             // Update the modal's content.
             var modal = $(this);
-            modal.find('.modal-title').text('Details for ' + courseName);
+            modal.find('.modal-title').text(courseName);
             modal.find('#modal-course-name').text('Course: ' + courseName);
             modal.find('#modal-grade').text('Grade: ' + grade + '/100');
             modal.find('#modal-appreciation').text('Appreciation: ' + appreciation);

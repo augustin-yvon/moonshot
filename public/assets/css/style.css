@@ -4,6 +4,7 @@
 :root {
     --blue: #0062FF;
     --dark-black: #141218;
+    --purple: #8600ff;
 }
 
 .btn:focus {
@@ -12,7 +13,7 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    background-color: #D9D9D9;
+    background-color: #e6e6e6;
     margin: 0;
     padding: 0;
     position: relative;
@@ -104,7 +105,7 @@ header nav ul li a:active {
 
 
 /*********************************************/
-/************* FROM LOGIN/REGISTER ***********/
+/************* FORM LOGIN/REGISTER ***********/
 /*********************************************/
 
 .form-container {
@@ -153,21 +154,22 @@ header nav ul li a:active {
 /*********************************************/
 
 .dashboard {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
 }
 
 /*********************************************/
 /*************** GRADES SECTION **************/
 /*********************************************/
 
-.grades-section, .courses-section {
+.grades-section, .courses-section, .calendar-section {
     background-color: white;
     border: transparent solid 1px;
     border-radius: 20px;
-    width: 45%;
-    margin-top: 50px;
     padding: 10px 25px 30px 25px;
     box-shadow: 5px 5px 4px 1px #868686;
 }
@@ -216,7 +218,6 @@ footer {
     margin-top: auto;
     font-size: 14px;
     width: 100%;
-    position: absolute;
     bottom: 0;
 }
 
@@ -238,12 +239,16 @@ footer {
 
 .modal-content {
     position: fixed;
+    background: #F6E0FE;
     /* center the modal on the screen */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 50px;
+    padding: 30px 50px;
     background-color: white;
     z-index: 1050;
     outline: 0;
+    width: 400px;
+    border: 5px solid var(--purple);
+    border-radius: 20px;
   }
