@@ -215,19 +215,22 @@ footer {
     background-color: var(--blue);
     color: var(--white);
     padding-top: 5px;
-    color: white;
-    padding: 5px;
-    margin-top: auto;
     font-size: 14px;
     width: 100%;
+    position: absolute;
     bottom: 0;
+    border-radius: 20px 20px 0 0;
+}
+
+.text_footer {
+    margin: 5px
 }
 
 /*********************************************/
 /******************* MODAL *******************/
 /*********************************************/
 
-.modal{
+/* .modal{
     display: none;
     position: fixed;
     z-index: 1050;
@@ -242,7 +245,6 @@ footer {
 .modal-content {
     position: fixed;
     background: #F6E0FE;
-    /* center the modal on the screen */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -253,7 +255,7 @@ footer {
     width: 400px;
     border: 5px solid var(--purple);
     border-radius: 20px;
-  }
+  } */
   
 
   
