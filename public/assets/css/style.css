@@ -9,6 +9,9 @@
     --dark-grey: #5a5a5a;
     --white: #FFFFFF;
     --shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
+    --green: #00FF00;
+    --orange: #FFA500;
+    --red: #FF0000;
 }
 
 body {
@@ -17,7 +20,8 @@ body {
     padding: 0;
     font-family: "Helvetica", serif;
     position: relative;
-    height: 100vh;
+    height: 100%;
+
 }
 
 /* Header CSS */
@@ -117,7 +121,7 @@ footer {
     font-size: 14px;
     width: 100%;
     position: absolute;
-    bottom: 0;
+    /* bottom: 0; */
     border-radius: 20px 20px 0 0;
 }
 
@@ -128,7 +132,7 @@ footer {
 /* Background CSS */
   
 .background {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -136,6 +140,10 @@ footer {
     overflow: hidden;
     z-index: -1;
     background: radial-gradient(circle at center, var(--white), var(--light-grey));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .text-group {
@@ -174,20 +182,131 @@ footer {
   
 /* Container CSS */
 
-.form-container {
+/* .form-container {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 500px;
     width: 100%;
-    background-color: #fff; 
     border-radius: .375rem; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
     padding: 1.5rem; 
     z-index: 1050;
-}
+} */
 
 .modal-header, .modal-title {
     justify-content: center;
+}
+
+/*********************************************/
+/***************** DASHBOARD *****************/
+/*********************************************/
+
+.dashboard {
+    margin: 50px 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+
+/*********************************************/
+/*************** GRADES SECTION **************/
+/*********************************************/
+
+.grades-section, .courses-section, .calendar-section {
+    background-color: white;
+    border: transparent solid 1px;
+    border-radius: 20px;
+    padding: 10px 25px 30px 25px;
+    box-shadow: 5px 5px 4px 1px #868686;
+}
+
+.grade-data, .course-data {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 0.5px solid transparent;
+    padding: 10px 15px 10px 15px;
+}
+
+.grade-data:hover, .course-data:hover {
+    border: 0.5px solid #e0e0e0;
+}
+
+#course-name {
+    font-weight: 400;
+}
+
+.grade-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+}
+
+.grade-score {
+    font-size: 14px;
+}
+
+.high-grade {
+    background-color: var(--green);
+}
+
+.mid-grade {
+    background-color: var(--orange);
+}
+
+.low-grade {
+    background-color: var(--red);
+}
+
+/*********************************************/
+/************** COURSES SECTION **************/
+/*********************************************/
+.course-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.document {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--white);
+    color: var(--blue);
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: var(--blue);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.download-button .material-icons {
+    font-size: 16px;
+    margin-right: 6px;
 }
