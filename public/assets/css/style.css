@@ -64,6 +64,9 @@ header {
     margin-top: 2px;
 }
 
+header nav {
+    height: 100%;
+}
 
 header nav ul {
     display: flex;
@@ -103,110 +106,6 @@ header nav ul a:hover {
 
 
 /* footer CSS */
-.wrapper {
-    margin: 0 40px 0 40px;
-}
-
-
-/*********************************************/
-/************* FORM LOGIN/REGISTER ***********/
-/*********************************************/
-
-.form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.form-input {
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-}
-
-.form-input input {
-    margin-top: 10px;
-    font-size: 15px;
-    padding: 7px;
-}
-
-.form-input button {
-    font-size: 15px;
-    margin-top: 20px;
-    color: var(--dark-black);
-    text-decoration: none;
-    border: solid 1px #959595;
-    padding: 10px 12px 10px 12px;
-    border-radius: 8px;
-    width: 250px;
-}
-
-.form-input button:hover {
-    border: solid 1px var(--dark-black);
-}
-
-.form-row {
-    width: 230px;
-}
-
-/*********************************************/
-/***************** DASHBOARD *****************/
-/*********************************************/
-
-.dashboard {
-    margin: 50px 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
-}
-
-/*********************************************/
-/*************** GRADES SECTION **************/
-/*********************************************/
-
-.grades-section, .courses-section, .calendar-section {
-    background-color: white;
-    border: transparent solid 1px;
-    border-radius: 20px;
-    padding: 10px 25px 30px 25px;
-    box-shadow: 5px 5px 4px 1px #868686;
-}
-
-.grade-data, .course-data {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border: 0.5px solid transparent;
-    padding: 10px 15px 10px 15px;
-}
-
-.grade-data:hover, .course-data:hover {
-    border: 0.5px solid #686868;
-    padding: 10px 15px 10px 15px;
-    border-radius: 10px;
-}
-
-#course-name {
-    font-weight: 400;
-}
-
-
-/*********************************************/
-/************** COURSES SECTION **************/
-/*********************************************/
-
-.course-data a {
-    color: var(--dark-black);
-    font-size: 13px;
-}
-
-/*********************************************/
-/******************* FOOTER ******************/
-/*********************************************/
 
 footer {
     display: flex;
@@ -226,39 +125,6 @@ footer {
     margin: 5px
 }
 
-/*********************************************/
-/******************* MODAL *******************/
-/*********************************************/
-
-/* .modal{
-    display: none;
-    position: fixed;
-    z-index: 1050;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-    position: fixed;
-    background: #F6E0FE;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 30px 50px;
-    background-color: white;
-    z-index: 1050;
-    outline: 0;
-    width: 400px;
-    border: 5px solid var(--purple);
-    border-radius: 20px;
-  } */
-  
-
-  
 /* Background CSS */
   
 .background {
