@@ -23,7 +23,6 @@ body {
 /* Header CSS */
 
 header {
-    font-family: "Lusitana", serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -118,7 +117,6 @@ header nav ul a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: "Lusitana", serif;
 }
 
 .form-input {
@@ -129,13 +127,11 @@ header nav ul a:hover {
 
 .form-input input {
     margin-top: 10px;
-    font-family: "Lusitana", serif;
     font-size: 15px;
     padding: 7px;
 }
 
 .form-input button {
-    font-family: "Lusitana", serif;
     font-size: 15px;
     margin-top: 20px;
     color: var(--dark-black);
@@ -213,7 +209,6 @@ header nav ul a:hover {
 /*********************************************/
 
 footer {
-    font-family: "Lusitana", serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -260,3 +255,71 @@ footer {
     border-radius: 20px;
   }
   
+
+  
+/* Background CSS */
+  
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    background: radial-gradient(circle at center, var(--white), var(--light-grey));
+}
+
+.text-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.text-line {
+    display: flex;
+    justify-content: center;
+}
+
+.filled, .empty, .light {
+    font-size: 16rem; 
+    text-transform: uppercase;
+    line-height: 0.5; 
+}
+
+.filled {
+    color: #0062FF;
+    font-weight: bold;
+}
+
+.empty {
+    color: transparent;
+    -webkit-text-stroke: 2px #0062FF;
+    font-weight: bold;
+}
+
+.light {
+    color: #99c0ff;
+    font-weight: bold;
+}
+  
+/* Container CSS */
+
+.form-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    width: 100%;
+    background-color: #fff; 
+    border-radius: .375rem; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    padding: 1.5rem; 
+    z-index: 1050;
+}
+
+.modal-header, .modal-title {
+    justify-content: center;
+}
