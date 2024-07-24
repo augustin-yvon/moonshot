@@ -20,12 +20,14 @@ class Grade
     #[ORM\Column]
     private ?int $grade = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Course $course_id = null;
 
     #[ORM\Column(length: 1000)]
     private ?string $appreciation = null;
+
+    #[ORM\ManyToOne(inversedBy: 'grades')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Course $course = null;
+
 
     public function getId(): ?int
     {
@@ -56,18 +58,6 @@ class Grade
         return $this;
     }
 
-    public function getCourseId(): ?Course
-    {
-        return $this->course_id;
-    }
-
-    public function setCourseId(Course $course_id): static
-    {
-        $this->course_id = $course_id;
-
-        return $this;
-    }
-
     public function getAppreciation(): ?string
     {
         return $this->appreciation;
@@ -79,4 +69,17 @@ class Grade
 
         return $this;
     }
+
+    public function getCourse(): ?Course
+    {
+        return $this->course;
+    }
+
+    public function setCourse(?Course $course): static
+    {
+        $this->course = $course;
+
+        return $this;
+    }
+
 }

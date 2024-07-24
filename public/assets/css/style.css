@@ -4,10 +4,16 @@
 :root {
     --blue: #0062FF;
     --dark-black: #141218;
+    --purple: #8600ff;
+}
+
+.btn:focus {
+    box-shadow: none !important;
 }
 
 body {
-    background-color: #D9D9D9;
+    font-family: "Roboto", sans-serif;
+    background-color: #e6e6e6;
     margin: 0;
     padding: 0;
     font-family: "Helvetica", serif;
@@ -15,7 +21,18 @@ body {
     height: 100vh;
 }
 
+h2 {
+    font-weight: 600;
+    color: var(--blue);
+}
+
+
+/*********************************************/
+/******************** HEADER *****************/
+/*********************************************/
+
 header {
+    font-family: "Lusitana", serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,6 +48,20 @@ header {
     color: var(--dark-black);
 }
 
+.class-data {
+    margin-top: 10px;
+}
+
+.class-data p {
+    font-weight: 900;
+    margin: 0;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
 .user-data_title {
     font-size: 40px;
     font-weight: bold;
@@ -43,13 +74,23 @@ header {
     padding: 5px 0 15px 0;
 }
 
-.user-data p {
-    margin-left: 20px;
+.user-data_title {
+    font-size: 40px;
+    font-weight: bold;
+    padding: 8px 0;
 }
 
-header nav {
-    height: 100%;
+.user-data_subtitle {
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 0 15px 0;
 }
+
+.user-info h1 {
+    margin: 0;
+    margin-left: 10px;
+}
+
 
 header nav ul {
     display: flex;
@@ -92,37 +133,152 @@ header nav ul a:hover {
     margin: 0 40px 0 40px;
 }
 
-/* .user-info {
+
+/*********************************************/
+/************* FORM LOGIN/REGISTER ***********/
+/*********************************************/
+
+.form-container {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    font-family: "Lusitana", serif;
 }
 
-.avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--blue);
-    color: white;
+.form-input {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    margin-right: 10px;
-    font-weight: bold;
-} */
+    flex-direction: column;
+    width: 250px;
+}
+
+.form-input input {
+    margin-top: 10px;
+    font-family: "Lusitana", serif;
+    font-size: 15px;
+    padding: 7px;
+}
+
+.form-input button {
+    font-family: "Lusitana", serif;
+    font-size: 15px;
+    margin-top: 20px;
+    color: var(--dark-black);
+    text-decoration: none;
+    border: solid 1px #959595;
+    padding: 10px 12px 10px 12px;
+    border-radius: 8px;
+    width: 250px;
+}
+
+.form-input button:hover {
+    border: solid 1px var(--dark-black);
+}
+
+.form-row {
+    width: 230px;
+}
+
+/*********************************************/
+/***************** DASHBOARD *****************/
+/*********************************************/
+
+.dashboard {
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+
+/*********************************************/
+/*************** GRADES SECTION **************/
+/*********************************************/
+
+.grades-section, .courses-section, .calendar-section {
+    background-color: white;
+    border: transparent solid 1px;
+    border-radius: 20px;
+    padding: 10px 25px 30px 25px;
+    box-shadow: 5px 5px 4px 1px #868686;
+}
+
+.grade-data, .course-data {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 0.5px solid transparent;
+    padding: 10px 15px 10px 15px;
+}
+
+.grade-data:hover, .course-data:hover {
+    border: 0.5px solid #686868;
+    padding: 10px 15px 10px 15px;
+    border-radius: 10px;
+}
+
+#course-name {
+    font-weight: 400;
+}
+
+
+/*********************************************/
+/************** COURSES SECTION **************/
+/*********************************************/
+
+.course-data a {
+    color: var(--dark-black);
+    font-size: 13px;
+}
+
+/*********************************************/
+/******************* FOOTER ******************/
+/*********************************************/
 
 footer {
+    font-family: "Lusitana", serif;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--blue);
     color: white;
-    padding: 10px;
+    padding: 5px;
     margin-top: auto;
     font-size: 14px;
     width: 100%;
-    position: absolute;
     bottom: 0;
-    border: solid transparent;
-    border-radius: 20px 20px 0 0;
 }
+
+/*********************************************/
+/******************* MODAL *******************/
+/*********************************************/
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    position: fixed;
+    background: #F6E0FE;
+    /* center the modal on the screen */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 50px;
+    background-color: white;
+    z-index: 1050;
+    outline: 0;
+    width: 400px;
+    border: 5px solid var(--purple);
+    border-radius: 20px;
+  }

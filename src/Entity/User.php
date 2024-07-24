@@ -65,7 +65,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __construct()
     {
         $this->created_at = new \DateTimeImmutable();
-        $this->roles = ['ROLE_USER'];
+        $this->roles = ['ROLE_STUDENT'];
         $this->documents = new ArrayCollection();
         $this->tasks = new ArrayCollection();
         $this->class_id = new ArrayCollection();
@@ -159,10 +159,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         return $this->email;
     }
-
-
-
-
 
     public function getCreatedAt(): ?\DateTimeImmutable
     {

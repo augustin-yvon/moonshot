@@ -5,9 +5,11 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
             <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         {% endblock %}
         {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
@@ -15,10 +17,25 @@
         <header>
             <div class="user-data">
                 {% if app.user %}
-                    <div class="user-data_title">Bonjour {{ app.user.firstname }} {{app.user.lastname}}</div>
-                        {% for class in app.user.classId %}
-                            <div class="user-data_subtitle">{{ class.name }}</div>
+                    <div class="user-info">
+                        <div class="role-icon">
+                        {% for role in app.user.roles %}
+                            {% if role == "ROLE_STUDENT" %}
+                            <img src="{{ asset('assets/media/svg/student-role.svg') }}" alt="student role icon">
+                            {% elseif role == "ROLE_TEACHER" %}
+                            <img src="{{ asset('assets/media/svg/teacher-role.svg') }}" alt="teacher role icon">
+                            {% elseif role == "ROLE_ADMIN" %}
+                            <img src="{{ asset('assets/media/svg/admin-role.svg') }}" alt="admin role icon">
+                            {% endif %}
                         {% endfor %}
+                        </div>
+                        <h1>Hello {{ app.user.firstname }} {{app.user.lastname}}</h1>
+                    </div>
+                    <div class="class-data">
+                        {% for class in app.user.classId %}
+                            <p>{{ class.name }}</p>
+                        {% endfor %}
+                    </div>
                 {% else %}
                     <h1>Bienvenue </h1>
                 {% endif %}

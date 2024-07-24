@@ -16,20 +16,18 @@ class ClassNameRepository extends ServiceEntityRepository
         parent::__construct($registry, ClassName::class);
     }
 
-    //    /**
-    //     * @return ClassName[] Returns an array of ClassName objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('c')
-    //            ->andWhere('c.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('c.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+       /**
+        * @return ClassName[] Returns an array of ClassName objects
+        */
+       public function findByUser($user): array
+       {
+           return $this->createQueryBuilder('c')
+               ->Where('c.users = :val')
+               ->setParameter('val', $user)
+               ->getQuery()
+               ->getResult()
+           ;
+       }
 
     //    public function findOneBySomeField($value): ?ClassName
     //    {
