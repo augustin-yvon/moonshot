@@ -8,14 +8,24 @@ const localizer = momentLocalizer(moment);
 const MyCalendar = () => {
   const [events, setEvents] = useState([
     {
-      title: 'Réunion',
-      start: new Date(),
-      end: new Date(moment().add(1, 'hours').toDate()),
+      title: 'Symfony with Twig',
+      start: new Date(2024, 6, 22, 10, 0),
+      end: new Date(2024, 6, 22, 13, 0),
     },
     {
-        title: 'Déjeuner',
-        start: new Date(2024, 6, 20, 12, 0), // 20 juillet 2024, 12:00
-        end: new Date(2024, 6, 20, 14, 0), // 20 juillet 2024, 14:00
+      title: 'English workshop',
+      start: new Date(2024, 6, 23, 15, 0),
+      end: new Date(2024, 6, 23, 17, 0),
+    },
+    {
+      title: 'PHP 3/6',
+      start: new Date(2024, 6, 25, 14, 0),
+      end: new Date(2024, 6, 25, 16, 0),
+    },
+    {
+        title: 'Project management',
+        start: new Date(2024, 6, 26, 9, 0),
+        end: new Date(2024, 6, 26, 12, 0),
       },
   ]);
 
@@ -36,6 +46,7 @@ const MyCalendar = () => {
         min={minTime}
         max={maxTime}
         style={{ height: 500 }}
+        views={['month', 'week', 'day', 'agenda']}
       />
     </div>
   );

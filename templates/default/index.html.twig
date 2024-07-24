@@ -10,7 +10,10 @@
 
         <div class="dashboard">
             <div class="grades-section">
-                <h2>Your grades</h2>
+                <div class="header-grade-section">
+                    <h2>Your grades</h2>
+                    <p></p>
+                </div>
                 {% if grades is not empty %}
                     {% for grade in grades %}
                         <button type="button" style="all:unset; width:100%;" data-toggle="modal" data-target="#exampleModal"
@@ -57,7 +60,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title" id="exampleModalLabel">Modal title</h2>
+                        <h3 class="modal-title" id="exampleModalLabel">Modal title</h3>
                     </div>
                     <div class="modal-body">
                         <p id="modal-grade"></p>

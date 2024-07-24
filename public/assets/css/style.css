@@ -13,15 +13,10 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    background-color: #e6e6e6;
     margin: 0;
     padding: 0;
     position: relative;
     height: 100vh;
-    /* background-image: url('/assets/media/png/bg.png');
-    background-size: cover;
-    background-repeat: repeat;
-    background-position: center center; */
     background-color: #e5e5f7;
     opacity: 0.8;
     background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
@@ -31,6 +26,13 @@ body {
 h2 {
     font-weight: 600;
     color: var(--blue);
+    font-size: 40px;
+}
+
+h3 {
+    font-weight: 600;
+    color: var(--blue);
+    font-size: 30px;
 }
 
 
@@ -189,6 +191,7 @@ header nav ul li a:active {
     justify-content: space-between;
     border: 0.5px solid transparent;
     padding: 10px 15px 10px 15px;
+    cursor: pointer;
 }
 
 .grade-data:hover, .course-data:hover {
@@ -252,11 +255,71 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 30px 50px;
+    padding: 10px 50px 30px 50px;
     background-color: white;
     z-index: 1050;
     outline: 0;
     width: 400px;
-    border: 5px solid var(--purple);
+    border: 5px solid var(--blue);
     border-radius: 20px;
   }
+
+
+/*********************************************/
+/****************** CALENDAR *****************/
+/*********************************************/
+
+.rbc-time-view .rbc-time-gutter {
+    font-size: 13px;
+}
+
+.rbc-row-content {
+    display: none;
+}
+
+.rbc-header {
+    border-bottom: none;
+}
+
+.rbc-button-link span {
+    font-weight: 700;
+}
+
+.rbc-day-slot .rbc-events-container {
+    position: static;
+}
+
+.rbc-day-slot .rbc-event, .rbc-day-slot .rbc-background-event {
+    border: none;
+}
+
+.rbc-event, .rbc-day-slot .rbc-background-event {
+    background-color: var(--blue);
+}
+
+.rbc-day-slot .rbc-event-content, .rbc-day-slot.rbc-event-label {
+    font-size: 13px;
+}
+
+.rbc-toolbar .rbc-toolbar-label {
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: var(--blue);
+}
+
+.rbc-today {
+    background-color: #E5E5F7;
+}
+
+.rbc-day-slot .rbc-time-slot {
+    border-top: none;
+}
+
+.rbc-event.rbc-selected, .rbc-day-slot .rbc-selected.rbc-background-event {
+    background-color: #8600ff;
+}
+
+.rbc-time-view {
+    border-bottom: none;
+}
