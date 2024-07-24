@@ -1,26 +1,47 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
-
 {% block body %}
-
     <div class="form-container">
-        <h1>Register</h1>
-        <div class="form-input">
-            {{ form_errors(registrationForm) }}
-
-            {{ form_start(registrationForm) }}
-                <div class="form-input-register">
-                    {{ form_row(registrationForm.firstname, {'attr': {'class': 'form-row'}}) }}
-                    {{ form_row(registrationForm.lastname, {'attr': {'class': 'form-row'}}) }}
-                    {{ form_row(registrationForm.birthday, {'attr': {'class': 'form-row'}}) }}
-                    {{ form_row(registrationForm.email, {'attr': {'class': 'form-row'}}) }}
-                    {{ form_row(registrationForm.plainPassword, {'attr': {'class': 'form-row'}}) }}
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title mb-3" id="registerModalLabel">S'enregistrer</h3>
                 </div>
-                
-                <button type="submit">Register</button>
-            {{ form_end(registrationForm) }}
+                <div class="modal-body">
+                    {{ form_start(registrationForm, {'attr': {'class': 'form-signin'}}) }}
+
+                    {{ form_errors(registrationForm) }}
+
+                    <div class="form-floating mb-3">
+                        {{ form_widget(registrationForm.firstname, {'attr': {'class': 'form-control', 'placeholder': 'Prénom'}}) }}
+                        {{ form_label(registrationForm.firstname, 'Prénom') }}
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        {{ form_widget(registrationForm.lastname, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
+                        {{ form_label(registrationForm.lastname, 'Nom') }}
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        {{ form_widget(registrationForm.birthday, {'attr': {'class': 'form-control', 'placeholder': 'Date de naissance'}}) }}
+                        {{ form_label(registrationForm.birthday, 'Date de Naissance') }}
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Email'}}) }}
+                        {{ form_label(registrationForm.email, 'Adresse Mail') }}
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control', 'placeholder': 'Mot de Passe'}}) }}
+                        {{ form_label(registrationForm.plainPassword, 'Mot de Passe') }}
+                    </div>
+
+                    <button type="submit" class="w-100 btn btn-lg btn-primary">S'enregistrer</button>
+
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
         </div>
     </div>
-    
 {% endblock %}
